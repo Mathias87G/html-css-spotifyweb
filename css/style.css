@@ -9,3 +9,102 @@
     clear: both;
     display: table;
 }
+/* Aside */
+
+.container {
+  display: flex;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 0 0 230px;
+  height: calc(100vh - 100px);
+  background-color: black;
+  padding-left: 20px;
+  color: #b3b3b3;
+  font-family: "Montserrat", sans-serif;
+}
+
+.logo {
+  height: 70px;
+}
+
+.icon-box-container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+
+.icon-box {
+  font-size: 15px;
+  font-weight: bolder;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.icon-box i {
+  font-size: 30px;
+  padding-right: 15px;
+}
+
+.playlist {
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+.playlist h4 {
+  text-transform: uppercase;
+  padding-bottom: 10px;
+}
+
+.create-playlist {
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.create-playlist i {
+  font-size: 40px;
+  padding-right: 15px;
+}
+
+.playlist-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.playlist-item {
+  padding-bottom: 15px;
+}
+
+.container-rx {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  height: 70px;
+  background-color: yellow;
+}
+
+/* main */
+main {
+  background-color: brown;
+  height: calc(100vh - 70px);
+}
+
+/* nav */
+
+nav {
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: green;
+}
