@@ -106,6 +106,7 @@ aside {
 .aside-down {
   font-size: 15px;
   font-weight: bold;
+  padding-bottom: 15px;
 }
 
 .download {
@@ -134,6 +135,11 @@ aside {
 .user i {
   font-size: 30px;
   padding-right: 15px;
+  cursor: pointer;
+}
+
+.user i:hover {
+  color: #b3b3b3;
 }
 
 .container-rx {
@@ -146,7 +152,7 @@ aside {
 /* Header */
 header {
   height: 70px;
-  width: calc(100vw - 230px);
+  width: calc(100vw - 247px);
   background-color: #040404;
   display: flex;
   justify-content: space-between;
@@ -191,6 +197,10 @@ header {
 #log {
   color: #040404;
   background-color: white;
+}
+
+#log:hover {
+  padding: 9px 21px;
 }
 
 /* main */
@@ -279,18 +289,33 @@ main h3, main h4 {
 }
 
 .layover {
+  height: 175px;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: yellow;
-  opacity: 0.5;
-  display:none;
+  background-color: rgba(234, 231, 244, 0.3);
+  cursor: pointer;
+  display: none;
+}
+
+.layover .play {
+  color: white;
+  font-size: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .card-image {
   position: relative;
+  transition: 0.5s;
+}
+
+.card-image:hover .layover {
+  display: block;
 }
 
 .createfor, .popularartist {
@@ -301,13 +326,101 @@ main h3, main h4 {
 
 nav {
   height: 100px;
-  width: 100%;
+  width: calc(100vw - 247px);
   position: fixed;
   bottom: 0;
-  left: 230px;
-  background-color: green;
-  z-index: 9999
+  right: 0;
+  background-color: #212121;
+  z-index: 9999;
+  font-family: "Montserrat", sans-serif;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-left-image {
+  padding: 0 10px;
+}
+
+.nav-left-text {
+  padding-right: 20px;
+}
+
+.nav-left img {
+  height: 60px;
+}
+
+.nav-left h5 {
+  color: white;
+}
+
+.nav-left small, .nav-left-icons {
+  color: #737373;
+}
+
+.nav-left-icons i {
+  padding: 0 5px;
+  font-size: 18px;
+}
+
+.nav-center-player_icons {
+  font-size: 18px;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-bottom: 15px;
+}
+
+.nav-center-player_icons i {
+  padding: 0 5px;
+}
+
+#play {
+  font-size: 40px;
+}
+
+.nav-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-center-player_bar {
+  height: 3px;
+  background-color: #737373;
+  width: 380px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-right-icons {
+  font-size: 18px;
+  color: white;
+}
+
+.nav-right-icons i {
+  padding: 0 5px;
+}
+
+.nav-right-volume_bar {
+  height: 3px;
+  background-color: #737373;
+  width: 150px;
+  margin: 0 10px;
+}
+
+
+
+/* media queries */
 
 @media screen and (max-width: 639px) {
 
@@ -324,12 +437,16 @@ nav {
     align-items: baseline;
   }
 
+  .aside-down {
+    padding-bottom: 8px;
+  }
+
   .user i {
     font-size: 30px;
     padding-right: 24px;
   }
 
-  header {
+  header, nav {
     width: calc(100vw - 70px);
   }
 
