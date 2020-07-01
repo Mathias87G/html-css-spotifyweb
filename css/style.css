@@ -11,7 +11,7 @@
 }
 
 section {
-  padding-left: 20px;
+  padding: 0 20px;
 }
 
 /* Aside */
@@ -25,11 +25,14 @@ aside {
   flex-direction: column;
   justify-content: space-between;
   flex: 0 0 230px;
-  height: calc(100vh - 100px);
+  height: calc(100vh);
   background-color: #040404;
-  padding: 0 20px;
+  padding: 0 24px;
   color: #b3b3b3;
   font-family: "Montserrat", sans-serif;
+  position: fixed;
+  left:0;
+  width: 230px;
 }
 
 .logo {
@@ -49,11 +52,20 @@ aside {
   display: flex;
   flex-direction: row;
   align-items: center;
+  cursor: pointer;
+}
+
+.icon-box:hover {
+  color: white;
 }
 
 .icon-box i {
   font-size: 30px;
   padding-right: 15px;
+}
+
+.icon-box .fa-spotify {
+  display: none;
 }
 
 .playlist {
@@ -70,6 +82,11 @@ aside {
   display: flex;
   align-items: center;
   padding-bottom: 20px;
+}
+
+.create-playlist:hover, .playlist-item:hover {
+  color: white;
+  cursor: pointer;
 }
 
 .create-playlist i {
@@ -98,6 +115,11 @@ aside {
   border-bottom: 1px solid #b3b3b3;
 }
 
+.download:hover {
+  color: white;
+  cursor: pointer;
+}
+
 .download i {
   padding-right: 10px;
 }
@@ -110,7 +132,7 @@ aside {
 }
 
 .user i {
-  font-size: 40px;
+  font-size: 30px;
   padding-right: 15px;
 }
 
@@ -120,14 +142,20 @@ aside {
   flex-direction: column;
 }
 
+
 /* Header */
 header {
   height: 70px;
+  width: calc(100vw - 230px);
   background-color: #040404;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family: "Montserrat", sans-serif;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9999;
 }
 
 .header-sx {
@@ -139,6 +167,10 @@ header {
 .header-sx .arrows i {
   color: #b3b3b3;
   padding: 0 15px;
+}
+
+.header-sx .arrows i:hover {
+  color: white;
 }
 
 .header-dx {
@@ -164,8 +196,13 @@ header {
 /* main */
 main {
   background-color: #121212;
-  height: calc(100vh - 70px);
+  height: 100%;
+  width: calc(100% - 230px);
   font-family: "Montserrat", sans-serif;
+  overflow-y: auto;
+  margin-left: 230px;
+  margin-bottom: 100px;
+  margin-top: 70px;
 }
 
 main h3, main h4 {
@@ -190,27 +227,33 @@ main h3, main h4 {
   cursor: pointer;
 }
 
-.menu li:hover {
+.menu li:first-child {
     color: white;
     border-bottom: 3px solid #436026;
 }
 
-/* section recent */
+.menu li:hover {
+  color: white;
+}
+
+/* section recent & createfor & popularartist */
 
 .recent {
   padding-top: 50px;
   padding-bottom: 50px;
 }
 
-.recent-card-container {
+.recent-card-container, .createfor-card-container, .popularartist-card-container {
   padding-top: 30px;
+  padding-bottom: 30px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
 }
 
-.recent-card {
+.recent-card, .createfor-card, .popularartist-card {
   padding: 10px 5px;
+  text-align: center;
 }
 
 .card {
@@ -223,7 +266,7 @@ main h3, main h4 {
   height: 175px;
 }
 
-.artist-circle img {
+.artist-circle img, .artist-circle {
   border-radius: 50%;
 }
 
@@ -231,10 +274,28 @@ main h3, main h4 {
   padding-top: 10px;
 }
 
-.card-text small {
+.card-text small, .createfor small {
   color: #b3b3b3;
 }
 
+.layover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: yellow;
+  opacity: 0.5;
+  display:none;
+}
+
+.card-image {
+  position: relative;
+}
+
+.createfor, .popularartist {
+  padding-bottom: 50px;
+}
 
 /* nav */
 
@@ -243,5 +304,58 @@ nav {
   width: 100%;
   position: fixed;
   bottom: 0;
+  left: 230px;
   background-color: green;
+  z-index: 9999
+}
+
+@media screen and (max-width: 639px) {
+
+  .icon-box-text, .playlist, .download-text, .user-text, .logo, .arrows {
+    display: none;
+  }
+
+  .download {
+    border-bottom: none;
+  }
+
+  aside {
+    width: 80px;
+    align-items: baseline;
+  }
+
+  .user i {
+    font-size: 30px;
+    padding-right: 24px;
+  }
+
+  header {
+    width: calc(100vw - 70px);
+  }
+
+  main {
+    width: calc(100% - 70px);
+    margin-left: 80px;
+  }
+
+  nav {
+    left: 80px;
+  }
+
+  .fa-arrow-circle-down {
+  padding-left: 7px;
+  }
+  .recent-card-container, .createfor-card-container, .popularartist-card-container {
+    justify-content: center;
+  }
+
+  .recent, .createfor, .popularartist {
+    text-align: center;
+  }
+
+  .icon-box .fa-spotify {
+    display: block;
+  }
+
+
 }
