@@ -25,7 +25,7 @@ aside {
   flex-direction: column;
   justify-content: space-between;
   flex: 0 0 230px;
-  height: calc(100vh);
+  height: calc(100vh - 100px);
   background-color: #040404;
   padding: 0 24px;
   color: #b3b3b3;
@@ -106,7 +106,7 @@ aside {
 .aside-down {
   font-size: 15px;
   font-weight: bold;
-  padding-bottom: 15px;
+  padding-bottom: 5px;
 }
 
 .download {
@@ -152,7 +152,7 @@ aside {
 /* Header */
 header {
   height: 70px;
-  width: calc(100vw - 247px);
+  min-width: calc(100vw - 230px);
   background-color: #040404;
   display: flex;
   justify-content: space-between;
@@ -326,11 +326,11 @@ main h3, main h4 {
 
 nav {
   height: 100px;
-  width: calc(100vw - 247px);
+  width: 100%;;
   position: fixed;
   bottom: 0;
   right: 0;
-  background-color: #212121;
+  background-color: #252424;
   z-index: 9999;
   font-family: "Montserrat", sans-serif;
   display:flex;
@@ -348,7 +348,7 @@ nav {
 }
 
 .nav-left-text {
-  padding-right: 20px;
+  padding-right: 15px;
 }
 
 .nav-left img {
@@ -363,8 +363,13 @@ nav {
   color: #737373;
 }
 
+.nav-left-icons i:hover {
+  color: white;
+  cursor: pointer;
+}
+
 .nav-left-icons i {
-  padding: 0 5px;
+  padding: 0 2px;
   font-size: 18px;
 }
 
@@ -374,6 +379,11 @@ nav {
   display: flex;
   align-items: center;
   padding-bottom: 15px;
+}
+
+.nav-center-player_icons i:hover {
+  color: #737373;
+  cursor: pointer;
 }
 
 .nav-center-player_icons i {
@@ -391,10 +401,24 @@ nav {
   align-items: center;
 }
 
+.nav-center-player {
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .nav-center-player_bar {
   height: 3px;
   background-color: #737373;
-  width: 380px;
+  width: 350px;
+}
+
+.time {
+  color: white;
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+  padding: 0 10px;
+
 }
 
 .nav-right {
@@ -405,6 +429,11 @@ nav {
 .nav-right-icons {
   font-size: 18px;
   color: white;
+}
+
+.nav-right-icons i:hover {
+  color: #737373;
+  cursor: pointer;
 }
 
 .nav-right-icons i {
@@ -422,7 +451,7 @@ nav {
 
 /* media queries */
 
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 642px) {
 
   .icon-box-text, .playlist, .download-text, .user-text, .logo, .arrows {
     display: none;
@@ -446,17 +475,13 @@ nav {
     padding-right: 24px;
   }
 
-  header, nav {
+  header {
     width: calc(100vw - 70px);
   }
 
   main {
     width: calc(100% - 70px);
     margin-left: 80px;
-  }
-
-  nav {
-    left: 80px;
   }
 
   .fa-arrow-circle-down {
@@ -474,5 +499,52 @@ nav {
     display: block;
   }
 
+  .nav-left img {
+    height: 100px;
+  }
+
+  .nav-left-image {
+    padding-left: 0;
+    padding-right: 20px;
+  }
+
+  .nav-right, .nav-center-player {
+    display: none;
+  }
+
+  .nav-center-player_icons {
+    padding-bottom: 0px;
+    padding-right: 10px;
+  }
+
+
+
+}
+
+@media screen and (max-width: 992px) {
+
+  .nav-center-player_bar {
+    width: 230px;
+  }
+
+  .nav-right-volume_bar {
+    width: 120px;
+  }
+
+  .fa-folder, .fa-sliders-h {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+
+  .nav-center-player_bar {
+    width: 150px;
+  }
+
+  .nav-right-icons .fa-desktop, .nav-left-icons .fa-heart {
+    display: none;
+  }
 
 }
